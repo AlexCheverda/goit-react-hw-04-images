@@ -17,10 +17,12 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(null);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     if (inputValue === '') {
       return;
     }
+    
     const updateImages = () => {
       setIsLoading(true);
       try {
@@ -41,6 +43,17 @@ const App = () => {
     };
     updateImages();
   }, [inputValue, page]);
+
+  const handleSearchSubmit = inputValue => {
+    setInputValue(inputValue);
+    setImages([]);
+    setPage(1);
+  };
+
+  const loadMore = () => {
+    setPage(page => page + 1);
+  };
+
   const showModalImage = largeImageURL => {
     const image = images.find(image => image.largeImageURL === largeImageURL);
     setShowModal({
@@ -48,14 +61,15 @@ const App = () => {
       tags: image.tags,
     });
   };
+
   const closeModalImage = () => {
     setShowModal(null);
   };
+
   return (
     <Container>
       <Searchbar onSearch={handleSearchSubmit} />
-      {error &&
-        toast.warning(`Ooops, something went wrong: ${error.message}`)}
+      {error && toast.warning(`Ooops, something went wrong: ${error.message}`)}
       {isLoading && <Loader />}
       {images.length > 0 && (
         <>

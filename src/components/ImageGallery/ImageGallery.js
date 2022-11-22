@@ -6,13 +6,14 @@ const ImageGallery = ({ images, openModal }) => {
   return (
     <div>
       <Gallery>
-        {images
+        {images.lenght > 0
           ? images.map(({ id, webformatURL, tags, largeImageURL }) => (
               <ImageGalleryItem
                 key={id}
                 tags={tags}
                 smImg={webformatURL}
-                onClick={() => openModal(largeImageURL)}
+                modalImage={largeImageURL}
+                onClick={openModal}
               />
             ))
           : null}
