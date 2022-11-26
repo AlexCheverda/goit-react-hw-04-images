@@ -32,8 +32,8 @@ const App = () => {
               'There is no images with this request, please, try again'
             );
           }
-          const newImages = mapPictures(data.hits);
-          setImages(images => [...images, ...newImages]);
+          const newImg = mapPictures(data.hits);
+          setImages(images => [...images, ...newImg]);
         });
       } catch (error) {
         setError(error);

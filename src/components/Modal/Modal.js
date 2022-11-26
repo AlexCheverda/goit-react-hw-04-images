@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Overlay, ModalBox } from './Modal.Styled';
 
 const Modal = ({ lgImg, tags, closeModal }) => {
