@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Container } from './App.Styled';
-import { fetchImages } from "Api/Api";
-import { mapPictures } from "Api/mapPictures";
-import Searchbar from "components/Searchbar";
-import ImageGallery from "components/ImageGallery";
-import Button from "components/Button";
-import Modal from "components/Modal";
-import Loader from "components/Loader";
+import { Container } from './App.styled';
+import { fetchImages } from 'Api/Api';
+import { mapPictures } from 'Api/mapPictures';
+import Searchbar from 'components/Searchbar';
+import ImageGallery from 'components/ImageGallery';
+import Button from 'components/Button';
+import Modal from 'components/Modal';
+import Loader from 'components/Loader';
 
 const App = () => {
   const [inputValue, setInputValue] = useState('');
@@ -32,8 +32,8 @@ const App = () => {
               'There is no images with this request, please, try again'
             );
           }
-          const newImg = mapPictures(data.hits);
-          setImages(images => [...images, ...newImg]);
+          const newImage = mapPictures(data.hits);
+          setImages(images => [...images, ...newImage]);
         });
       } catch (error) {
         setError(error);
@@ -79,7 +79,7 @@ const App = () => {
       )}
       {showModal && (
         <Modal
-          lgImg={showModal.largeImageURL}
+          lgImage={showModal.largeImageURL}
           tags={showModal.tags}
           closeModal={closeModalImage}
         />

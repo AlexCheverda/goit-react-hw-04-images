@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaSearch } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
-import { SearchbarHeader, SearchForm, SearchBtn, FormInput } from './Searchbar.Styled';
+import { SearchbarHeader, SearchForm, SearchBtn, FormInput } from './Searchbar.styled';
 
 const Searchbar = ({ onSearch }) => {
     const [query, setQuery] = useState('');

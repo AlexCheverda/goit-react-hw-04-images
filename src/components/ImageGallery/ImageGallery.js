@@ -1,17 +1,17 @@
 import ImageGalleryItem from '../ImageGalleryItem/index';
 import PropTypes from 'prop-types';
-import { Gallery } from './ImageGallery.Styled';
+import { Gallery } from './ImageGallery.styled';
 
 const ImageGallery = ({ images, openModal }) => {
   return (
     <div>
       <Gallery>
-        {images.lenght > 0
+        {images.length > 0
           ? images.map(({ id, webformatURL, tags, largeImageURL }) => (
               <ImageGalleryItem
                 key={id}
                 tags={tags}
-                smImg={webformatURL}
+                smImage={webformatURL}
                 modalImage={largeImageURL}
                 onClick={openModal}
               />

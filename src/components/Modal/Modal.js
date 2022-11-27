@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Overlay, ModalBox } from './Modal.Styled';
 
-const Modal = ({ lgImg, tags, closeModal }) => {
+const Modal = ({ lgImage, tags, closeModal }) => {
     const handleKeyDown = element => {
         if (element.code === 'Escape') {
             closeModal();
@@ -23,7 +23,7 @@ const Modal = ({ lgImg, tags, closeModal }) => {
     return (
         <Overlay onClick={handleBackdropClick}>
             <ModalBox>
-                <img src={lgImg} alt={tags} />
+                <img src={lgImage} alt={tags} />
             </ModalBox>
         </Overlay>
     );
@@ -31,7 +31,7 @@ const Modal = ({ lgImg, tags, closeModal }) => {
 
 Modal.propTypes = {
     closeModal: PropTypes.func.isRequired,
-    lgImg: PropTypes.string.isRequired,
+    lgImage: PropTypes.string.isRequired,
     tags: PropTypes.string.isRequired,
 };
 
