@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Image } from './ImageGalleryItem.styled';
+import { Image } from './ImageGalleryItem.Styled';
 
 const ImageGalleryItem = ({ smImage, tags, onClick, modalImage }) => {
   return (

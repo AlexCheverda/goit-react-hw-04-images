@@ -1,6 +1,6 @@
 import ImageGalleryItem from '../ImageGalleryItem/index';
 import PropTypes from 'prop-types';
-import { Gallery } from './ImageGallery.styled';
+import { Gallery } from './ImageGallery.Styled';
 
 const ImageGallery = ({ images, openModal }) => {
   return (

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Container } from './App.styled';
+import { Container } from './App.Styled';
 import { fetchImages } from 'Api/Api';
 import { mapPictures } from 'Api/mapPictures';
 import Searchbar from 'components/Searchbar';
